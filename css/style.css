@@ -97,13 +97,19 @@ header {
     /* Altura do header */
     display: flex;
     overflow: hidden;
+    /* Define uma altura mínima para mobile não ficar com buracos */
+    height: 45vh;
 }
 
 .banner-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    /* Força a imagem a ocupar a altura do container */
     display: block;
     object-fit: cover;
+    /* Faz o "crop" inteligente nas laterais */
+    object-position: center;
+    /* Mantém o centro da imagem (robô/pessoa) visível */
 }
 
 section {
