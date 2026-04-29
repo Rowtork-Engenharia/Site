@@ -94,22 +94,28 @@ header {
 .banner-principal {
     width: 100%;
     margin-top: 85px;
-    /* Altura do header */
     display: flex;
     overflow: hidden;
-    /* Define uma altura mínima para mobile não ficar com buracos */
-    height: 45vh;
+    /* No mobile, forçamos uma altura fixa para preencher a tela */
+    height: 350px;
 }
 
 .banner-img {
     width: 100%;
     height: 100%;
-    /* Força a imagem a ocupar a altura do container */
     display: block;
+    /* O 'cover' faz a imagem preencher tudo, cortando as sobras */
     object-fit: cover;
-    /* Faz o "crop" inteligente nas laterais */
+    /* Ajusta o foco para o centro da imagem */
     object-position: center;
-    /* Mantém o centro da imagem (robô/pessoa) visível */
+}
+
+/* Ajuste para telas maiores (Desktop) */
+@media (min-width: 1024px) {
+    .banner-principal {
+        height: auto;
+        /* No PC ela volta ao normal */
+    }
 }
 
 section {
